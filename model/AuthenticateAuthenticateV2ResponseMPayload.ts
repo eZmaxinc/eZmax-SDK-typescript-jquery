@@ -13,11 +13,17 @@
 import * as models from './models';
 
 /**
- * Request for the /1/object/franchisereferalincome/createObject API Request
+ * Payload for the /2/module/authenticate/authenticate API Request
  */
-export interface FranchisereferalincomeCreateObjectV1Request {
-    objFranchisereferalincome?: models.FranchisereferalincomeRequest;
+export interface AuthenticateAuthenticateV2ResponseMPayload {
+    /**
+     * The Authorization key
+     */
+    sAuthorization: string;
 
-    objFranchisereferalincomeCompound?: models.FranchisereferalincomeRequestCompound;
+    /**
+     * The secret key
+     */
+    sSecret: string;
 
 }

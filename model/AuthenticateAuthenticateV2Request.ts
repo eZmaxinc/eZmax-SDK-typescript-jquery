@@ -13,17 +13,27 @@
 import * as models from './models';
 
 /**
- * Description of the API Key  
+ * Request for the /2/module/authenticate/authenticate API Request
  */
-export interface MultilingualApikeyDescription {
+export interface AuthenticateAuthenticateV2Request {
     /**
-     * Value in French
+     * The customer code assigned to your account
      */
-    sApikeyDescription1?: string;
+    pksCustomerCode: string;
 
     /**
-     * Value in English
+     * The email address.
      */
-    sApikeyDescription2?: string;
+    sEmailAddress?: string;
+
+    /**
+     * The Login name of the User.
+     */
+    sUserLoginname?: string;
+
+    /**
+     * A Password.  Must meet complexity requirements
+     */
+    sPassword: string;
 
 }

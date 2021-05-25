@@ -1,5 +1,7 @@
 export * from './GlobalCustomerApi';
 import { GlobalCustomerApi } from './GlobalCustomerApi';
+export * from './ModuleAuthenticateApi';
+import { ModuleAuthenticateApi } from './ModuleAuthenticateApi';
 export * from './ModuleSsprApi';
 import { ModuleSsprApi } from './ModuleSsprApi';
 export * from './ModuleUserApi';
@@ -24,4 +26,4 @@ export * from './ObjectFranchisereferalincomeApi';
 import { ObjectFranchisereferalincomeApi } from './ObjectFranchisereferalincomeApi';
 export * from './ObjectPeriodApi';
 import { ObjectPeriodApi } from './ObjectPeriodApi';
-export const APIS = [GlobalCustomerApi, ModuleSsprApi, ModuleUserApi, ObjectActivesessionApi, ObjectApikeyApi, ObjectEzsigndocumentApi, ObjectEzsignfolderApi, ObjectEzsignfoldersignerassociationApi, ObjectEzsignsignatureApi, ObjectFranchisebrokerApi, ObjectFranchiseofficeApi, ObjectFranchisereferalincomeApi, ObjectPeriodApi];
+export const APIS = [GlobalCustomerApi, ModuleAuthenticateApi, ModuleSsprApi, ModuleUserApi, ObjectActivesessionApi, ObjectApikeyApi, ObjectEzsigndocumentApi, ObjectEzsignfolderApi, ObjectEzsignfoldersignerassociationApi, ObjectEzsignsignatureApi, ObjectFranchisebrokerApi, ObjectFranchiseofficeApi, ObjectFranchisereferalincomeApi, ObjectPeriodApi];

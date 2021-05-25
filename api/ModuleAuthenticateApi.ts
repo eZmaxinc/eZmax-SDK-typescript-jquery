@@ -19,7 +19,7 @@ import { Configuration } from '../configuration';
 /* tslint:disable:no-unused-variable member-ordering */
 
 
-export class ObjectApikeyApi {
+export class ModuleAuthenticateApi {
     protected basePath = 'https://prod.api.appcluster01.ca-central-1.ezmax.com/rest';
     public defaultHeaders: Array<string> = [];
     public defaultExtraJQueryAjaxSettings?: JQueryAjaxSettings = undefined;
@@ -47,21 +47,27 @@ export class ObjectApikeyApi {
     }
 
     /**
-     * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
-     * @summary Create a new Apikey
-     * @param modelsApikeyCreateObjectV1Request 
+     * This endpoint authenticates a user.
+     * @summary Authenticate a user
+     * @param eSessionType 
+     * @param authenticateAuthenticateV2Request 
      */
-    public apikeyCreateObjectV1(modelsApikeyCreateObjectV1Request: Array<models.ApikeyCreateObjectV1Request>, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
-    { response: JQueryXHR; body: models.ApikeyCreateObjectV1Response;  },
+    public authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: models.AuthenticateAuthenticateV2Request, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    { response: JQueryXHR; body: models.AuthenticateAuthenticateV2Response;  },
     { response: JQueryXHR; errorThrown: string }
     > {
-        let localVarPath = this.basePath + '/1/object/apikey';
+        let localVarPath = this.basePath + '/2/module/authenticate/authenticate/ezsignuser/{eSessionType}'.replace('{' + 'eSessionType' + '}', encodeURIComponent(String(eSessionType)));
 
         let queryParameters: any = {};
         let headerParams: any = {};
-        // verify required parameter 'modelsApikeyCreateObjectV1Request' is not null or undefined
-        if (modelsApikeyCreateObjectV1Request === null || modelsApikeyCreateObjectV1Request === undefined) {
-            throw new Error('Required parameter modelsApikeyCreateObjectV1Request was null or undefined when calling apikeyCreateObjectV1.');
+        // verify required parameter 'eSessionType' is not null or undefined
+        if (eSessionType === null || eSessionType === undefined) {
+            throw new Error('Required parameter eSessionType was null or undefined when calling authenticateAuthenticateV2.');
+        }
+
+        // verify required parameter 'authenticateAuthenticateV2Request' is not null or undefined
+        if (authenticateAuthenticateV2Request === null || authenticateAuthenticateV2Request === undefined) {
+            throw new Error('Required parameter authenticateAuthenticateV2Request was null or undefined when calling authenticateAuthenticateV2.');
         }
 
 
@@ -91,7 +97,7 @@ export class ObjectApikeyApi {
             processData: false
         };
 
-        requestOptions.data = JSON.stringify(modelsApikeyCreateObjectV1Request);
+        requestOptions.data = JSON.stringify(authenticateAuthenticateV2Request);
         if (headerParams['Content-Type']) {
             requestOptions.contentType = headerParams['Content-Type'];
         }
@@ -105,11 +111,11 @@ export class ObjectApikeyApi {
         }
 
         let dfd = $.Deferred<
-            { response: JQueryXHR; body: models.ApikeyCreateObjectV1Response;  },
+            { response: JQueryXHR; body: models.AuthenticateAuthenticateV2Response;  },
             { response: JQueryXHR; errorThrown: string }
         >();
         $.ajax(requestOptions).then(
-            (data: models.ApikeyCreateObjectV1Response, textStatus: string, jqXHR: JQueryXHR) =>
+            (data: models.AuthenticateAuthenticateV2Response, textStatus: string, jqXHR: JQueryXHR) =>
                 dfd.resolve({response: jqXHR, body: data}),
             (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
                 dfd.reject({response: xhr, errorThrown: errorThrown})

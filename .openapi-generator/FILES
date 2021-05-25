@@ -1,6 +1,7 @@
 .openapi-generator-ignore
 README.md
 api/GlobalCustomerApi.ts
+api/ModuleAuthenticateApi.ts
 api/ModuleSsprApi.ts
 api/ModuleUserApi.ts
 api/ObjectActivesessionApi.ts
@@ -27,6 +28,9 @@ model/ApikeyRequest.ts
 model/ApikeyRequestCompound.ts
 model/ApikeyResponse.ts
 model/AttemptResponse.ts
+model/AuthenticateAuthenticateV2Request.ts
+model/AuthenticateAuthenticateV2Response.ts
+model/AuthenticateAuthenticateV2ResponseMPayload.ts
 model/CommonAudit.ts
 model/CommonGetAutocompleteV1Response.ts
 model/CommonGetAutocompleteV1ResponseMPayload.ts
