@@ -1,6 +1,6 @@
 {
     "name": "@ezmaxinc/ezmax-sdk-typescript-jquery",
-    "version": "1.0.43",
+    "version": "1.0.44",
     "description": "JQuery client for @ezmaxinc/ezmax-sdk-typescript-jquery",
     "main": "api.js",
     "scripts": {
