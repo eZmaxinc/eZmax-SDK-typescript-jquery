@@ -120,7 +120,7 @@ export class ObjectEzsignsignatureApi {
     /**
      * 
      * @summary Delete an existing Ezsignsignature
-     * @param pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     * @param pkiEzsignsignatureID 
      */
     public ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.EzsignsignatureDeleteObjectV1Response;  },
@@ -187,7 +187,7 @@ export class ObjectEzsignsignatureApi {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignsignature\'s children IDs
-     * @param pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     * @param pkiEzsignsignatureID 
      */
     public ezsignsignatureGetChildrenV1(pkiEzsignsignatureID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body?: any;  },
@@ -254,7 +254,7 @@ export class ObjectEzsignsignatureApi {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignsignature
-     * @param pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     * @param pkiEzsignsignatureID 
      */
     public ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.EzsignsignatureGetObjectV1Response;  },

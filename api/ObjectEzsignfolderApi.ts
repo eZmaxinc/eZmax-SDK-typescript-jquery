@@ -120,7 +120,7 @@ export class ObjectEzsignfolderApi {
     /**
      * 
      * @summary Delete an existing Ezsignfolder
-     * @param pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param pkiEzsignfolderID 
      */
     public ezsignfolderDeleteObjectV1(pkiEzsignfolderID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.EzsignfolderDeleteObjectV1Response;  },
@@ -187,7 +187,7 @@ export class ObjectEzsignfolderApi {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignfolder\'s children IDs
-     * @param pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param pkiEzsignfolderID 
      */
     public ezsignfolderGetChildrenV1(pkiEzsignfolderID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body?: any;  },
@@ -253,8 +253,76 @@ export class ObjectEzsignfolderApi {
 
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * @summary Retrieve an existing Ezsignfolder\'s forms data
+     * @param pkiEzsignfolderID 
+     */
+    public ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    { response: JQueryXHR; body: any;  },
+    { response: JQueryXHR; errorThrown: string }
+    > {
+        let localVarPath = this.basePath + '/1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData'.replace('{' + 'pkiEzsignfolderID' + '}', encodeURIComponent(String(pkiEzsignfolderID)));
+
+        let queryParameters: any = {};
+        let headerParams: any = {};
+        // verify required parameter 'pkiEzsignfolderID' is not null or undefined
+        if (pkiEzsignfolderID === null || pkiEzsignfolderID === undefined) {
+            throw new Error('Required parameter pkiEzsignfolderID was null or undefined when calling ezsignfolderGetFormsDataV1.');
+        }
+
+
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        let consumes: string[] = [
+        ];
+
+        // to determine the Accept header
+        let produces: string[] = [
+            'application/zip', 
+            'application/json'
+        ];
+
+        // authentication (Authorization) required
+        if (this.configuration.apiKey) {
+            headerParams['Authorization'] = this.configuration.apiKey;
+        }
+
+
+        let requestOptions: JQueryAjaxSettings = {
+            url: localVarPath,
+            type: 'GET',
+            headers: headerParams,
+            processData: false
+        };
+
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+
+        if (extraJQueryAjaxSettings) {
+            requestOptions = (<any>Object).assign(requestOptions, extraJQueryAjaxSettings);
+        }
+
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = (<any>Object).assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+
+        let dfd = $.Deferred<
+            { response: JQueryXHR; body: any;  },
+            { response: JQueryXHR; errorThrown: string }
+        >();
+        $.ajax(requestOptions).then(
+            (data: any, textStatus: string, jqXHR: JQueryXHR) =>
+                dfd.resolve({response: jqXHR, body: data}),
+            (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
+                dfd.reject({response: xhr, errorThrown: errorThrown})
+        );
+        return dfd.promise();
+    }
+
+    /**
+     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignfolder
-     * @param pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param pkiEzsignfolderID 
      */
     public ezsignfolderGetObjectV1(pkiEzsignfolderID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.EzsignfolderGetObjectV1Response;  },
@@ -321,7 +389,7 @@ export class ObjectEzsignfolderApi {
     /**
      * 
      * @summary Send the Ezsignfolder to the signatories for signature
-     * @param pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param pkiEzsignfolderID 
      * @param ezsignfolderSendV1Request 
      */
     public ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: models.EzsignfolderSendV1Request, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<

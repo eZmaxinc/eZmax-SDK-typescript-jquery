@@ -49,7 +49,7 @@ export class ObjectEzsigndocumentApi {
     /**
      * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
      * @summary Apply an Ezsign Template to the Ezsigndocument.
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param pkiEzsigndocumentID 
      * @param ezsigndocumentApplyEzsigntemplateV1Request 
      */
     public ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: models.EzsigndocumentApplyEzsigntemplateV1Request, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
@@ -197,7 +197,7 @@ export class ObjectEzsigndocumentApi {
     /**
      * 
      * @summary Delete an existing Ezsigndocument
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param pkiEzsigndocumentID 
      */
     public ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.EzsigndocumentDeleteObjectV1Response;  },
@@ -264,7 +264,7 @@ export class ObjectEzsigndocumentApi {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsigndocument\'s children IDs
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param pkiEzsigndocumentID 
      */
     public ezsigndocumentGetChildrenV1(pkiEzsigndocumentID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body?: any;  },
@@ -331,7 +331,7 @@ export class ObjectEzsigndocumentApi {
     /**
      * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
      * @summary Retrieve a URL to download documents.
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param pkiEzsigndocumentID 
      * @param eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
      */
     public ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID: number, eDocumentType: 'Initial' | 'Signed' | 'Proof' | 'Proofdocument', extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
@@ -403,8 +403,75 @@ export class ObjectEzsigndocumentApi {
 
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * @summary Retrieve an existing Ezsigndocument\'s Ezsignpages
+     * @param pkiEzsigndocumentID 
+     */
+    public ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
+    { response: JQueryXHR; body: models.EzsigndocumentGetEzsignpagesV1Response;  },
+    { response: JQueryXHR; errorThrown: string }
+    > {
+        let localVarPath = this.basePath + '/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages'.replace('{' + 'pkiEzsigndocumentID' + '}', encodeURIComponent(String(pkiEzsigndocumentID)));
+
+        let queryParameters: any = {};
+        let headerParams: any = {};
+        // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
+        if (pkiEzsigndocumentID === null || pkiEzsigndocumentID === undefined) {
+            throw new Error('Required parameter pkiEzsigndocumentID was null or undefined when calling ezsigndocumentGetEzsignpagesV1.');
+        }
+
+
+        localVarPath = localVarPath + "?" + $.param(queryParameters);
+        // to determine the Content-Type header
+        let consumes: string[] = [
+        ];
+
+        // to determine the Accept header
+        let produces: string[] = [
+            'application/json'
+        ];
+
+        // authentication (Authorization) required
+        if (this.configuration.apiKey) {
+            headerParams['Authorization'] = this.configuration.apiKey;
+        }
+
+
+        let requestOptions: JQueryAjaxSettings = {
+            url: localVarPath,
+            type: 'GET',
+            headers: headerParams,
+            processData: false
+        };
+
+        if (headerParams['Content-Type']) {
+            requestOptions.contentType = headerParams['Content-Type'];
+        }
+
+        if (extraJQueryAjaxSettings) {
+            requestOptions = (<any>Object).assign(requestOptions, extraJQueryAjaxSettings);
+        }
+
+        if (this.defaultExtraJQueryAjaxSettings) {
+            requestOptions = (<any>Object).assign(requestOptions, this.defaultExtraJQueryAjaxSettings);
+        }
+
+        let dfd = $.Deferred<
+            { response: JQueryXHR; body: models.EzsigndocumentGetEzsignpagesV1Response;  },
+            { response: JQueryXHR; errorThrown: string }
+        >();
+        $.ajax(requestOptions).then(
+            (data: models.EzsigndocumentGetEzsignpagesV1Response, textStatus: string, jqXHR: JQueryXHR) =>
+                dfd.resolve({response: jqXHR, body: data}),
+            (xhr: JQueryXHR, textStatus: string, errorThrown: string) =>
+                dfd.reject({response: xhr, errorThrown: errorThrown})
+        );
+        return dfd.promise();
+    }
+
+    /**
+     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsigndocument\'s Form Data
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param pkiEzsigndocumentID 
      */
     public ezsigndocumentGetFormDataV1(pkiEzsigndocumentID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: any;  },
@@ -472,7 +539,7 @@ export class ObjectEzsigndocumentApi {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsigndocument
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param pkiEzsigndocumentID 
      */
     public ezsigndocumentGetObjectV1(pkiEzsigndocumentID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.EzsigndocumentGetObjectV1Response;  },
@@ -539,7 +606,7 @@ export class ObjectEzsigndocumentApi {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve positions X,Y of given words from a Ezsigndocument
-     * @param pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param pkiEzsigndocumentID 
      * @param ezsigndocumentGetWordsPositionsV1Request 
      */
     public ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID: number, ezsigndocumentGetWordsPositionsV1Request: models.EzsigndocumentGetWordsPositionsV1Request, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<

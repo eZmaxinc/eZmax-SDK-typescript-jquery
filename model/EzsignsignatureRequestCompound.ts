@@ -22,7 +22,7 @@ export interface EzsignsignatureRequestCompound {
     fkiEzsignfoldersignerassociationID: number;
 
     /**
-     * The page number in the document where to apply the signature
+     * The page number in the Ezsigndocument
      */
     iEzsignpagePagenumber: number;
 
@@ -44,7 +44,7 @@ export interface EzsignsignatureRequestCompound {
     eEzsignsignatureType: models.FieldEEzsignsignatureType;
 
     /**
-     * The unique ID of the Ezsigntemplate
+     * The unique ID of the Ezsigndocument
      */
     fkiEzsigndocumentID: number;
 

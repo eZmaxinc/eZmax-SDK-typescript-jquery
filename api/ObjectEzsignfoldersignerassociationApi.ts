@@ -120,7 +120,7 @@ export class ObjectEzsignfoldersignerassociationApi {
     /**
      * 
      * @summary Delete an existing Ezsignfoldersignerassociation
-     * @param pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param pkiEzsignfoldersignerassociationID 
      */
     public ezsignfoldersignerassociationDeleteObjectV1(pkiEzsignfoldersignerassociationID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.EzsignfoldersignerassociationDeleteObjectV1Response;  },
@@ -187,7 +187,7 @@ export class ObjectEzsignfoldersignerassociationApi {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignfoldersignerassociation\'s children IDs
-     * @param pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param pkiEzsignfoldersignerassociationID 
      */
     public ezsignfoldersignerassociationGetChildrenV1(pkiEzsignfoldersignerassociationID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body?: any;  },
@@ -254,7 +254,7 @@ export class ObjectEzsignfoldersignerassociationApi {
     /**
      * This endpoint returns a Login Url that can be used in a browser or embedded in an I-Frame to allow in person signing.  The signer Login type must be configured as In-Person.
      * @summary Retrieve a Login Url to allow In-Person signing
-     * @param pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param pkiEzsignfoldersignerassociationID 
      */
     public ezsignfoldersignerassociationGetInPersonLoginUrlV1(pkiEzsignfoldersignerassociationID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.EzsignfoldersignerassociationGetInPersonLoginUrlV1Response;  },
@@ -321,7 +321,7 @@ export class ObjectEzsignfoldersignerassociationApi {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignfoldersignerassociation
-     * @param pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param pkiEzsignfoldersignerassociationID 
      */
     public ezsignfoldersignerassociationGetObjectV1(pkiEzsignfoldersignerassociationID: number, extraJQueryAjaxSettings?: JQueryAjaxSettings): JQuery.Promise<
     { response: JQueryXHR; body: models.EzsignfoldersignerassociationGetObjectV1Response;  },
